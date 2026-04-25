@@ -8,3 +8,5 @@ numpy
 python-dotenv
 sentence-transformers
 langchain_huggingface
+langchain-text-splitters
+langchain-core
