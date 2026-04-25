@@ -1,39 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: anime-recommender-deployment
+  name: llmops-app
   labels:
-    app: anime-recommender
+    app: llmops
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: anime-recommender
+      app: llmops
   template:
     metadata:
       labels:
-        app: anime-recommender
+        app: llmops
     spec:
       containers:
-        - name: anime-recommender-container
-          image: anime-recommender:latest
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 8501
-          envFrom:
-            - secretRef:
-                name: anime-recommender-secrets
+      - name: llmops-container
+        image: llmops-app:latest  # Use local image
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8501
+        envFrom:
+          - secretRef:
+              name: llmops-secrets 
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: anime-recommender-service
+  name: llmops-service
 spec:
+  type: LoadBalancer
   selector:
-    app: anime-recommender
+    app: llmops
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8501
-  type: LoadBalancer
