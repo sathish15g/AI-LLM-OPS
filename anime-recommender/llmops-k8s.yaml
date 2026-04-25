@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: anime-recommender-deployment
-  lables:
+  labels:
     app: anime-recommender
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: anime-recommender\
+      app: anime-recommender
   template:
     metadata:
-      lables:
+      labels:
         app: anime-recommender
     spec:
       containers:
@@ -25,7 +25,7 @@ spec:
                 name: anime-recommender-secrets
 
 ---
-apiVersion : v1
+apiVersion: v1
 kind: Service
 metadata:
   name: anime-recommender-service
