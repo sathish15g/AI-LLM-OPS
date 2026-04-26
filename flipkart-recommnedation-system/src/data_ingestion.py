@@ -35,8 +35,5 @@ class DataIngestion:
         self.vstore.add_documents(documents=documents)
         print("Data ingestion completed successfully.")
         
-if __name__ == "__main__":
-    data_ingestion = DataIngestion()
-    data_ingestion.ingest_data(load_exiting=False)
 
     

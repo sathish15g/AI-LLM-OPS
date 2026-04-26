@@ -6,8 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
-
-from flipkart.config import Config
+from config.config import Config
 
 
 class RAGChainBuilder:
@@ -15,7 +14,7 @@ class RAGChainBuilder:
         self.vector_store = vector_store
 
         self.model = ChatGroq(
-            model=Config.RAG_MODEL,
+            model=Config.MODEL_NAME,
             temperature=0.5
         )
 
