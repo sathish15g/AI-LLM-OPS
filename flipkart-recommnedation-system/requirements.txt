@@ -1,0 +1,15 @@
+langchain
+langchain-community
+langchain_groq
+streamlit
+pandas
+numpy
+python-dotenv
+sentence-transformers
+langchain_huggingface
+langchain-text-splitters
+langchain-core
+pypdf
+flask
+prometheus_client
+langchain-astradb
